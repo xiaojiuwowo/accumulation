@@ -1,0 +1,6 @@
+使用swiper 做轮播是报错：
+vue.runtime.esm.js?2b0e:619 [Vue warn]: Error in nextTick: "RangeError: Maximum call stack size exceeded"
+
+问题原因：
+使用swiper的vue的名字是起的 Swiper.vue  
+把Swiper.vue 改名为Swiping.vue 就ok了

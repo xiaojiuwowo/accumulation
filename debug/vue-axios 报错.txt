@@ -1,0 +1,19 @@
+axios.js 代码：
+import Vue from "vue";
+import axios from "axios"
+Vue.use(axios);
+// Vue.prototype.$ajax = axios  //这个是在网上看到的别人的解决方案，但是并不可以
+export default function ajax(url,parms={},post="GET"){}
+
+使用axios是报错：
+isURLSameOrigin.js?3934:57 Uncaught (in promise) TypeError: Cannot read property 'protocol' of undefined
+    at isURLSameOrigin (isURLSameOrigin.js?3934:57)
+    at dispatchXhrRequest (xhr.js?b50d:109)
+    at new Promise (<anonymous>)
+    at xhrAdapter (xhr.js?b50d:12)
+    at dispatchRequest (dispatchRequest.js?5270:52)
+
+修改如下：
+import axios from "axios"
+export default function ajax(url,parms={},post="GET"){}
+不用引入vue，就不报错，也可以取到数据，但是官网上是需要vue的，待研究

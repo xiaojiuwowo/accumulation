@@ -1,0 +1,20 @@
+Home.vue
+<style lang="less" scoped>
+    .wapper{
+        width: 100%;
+        height: 100%;
+        background-color: red;
+    }
+</style>
+
+RushShop.vue中
+<style xml:lang="less" scoped>
+    .wapper{
+        padding-top: 0.9rem;
+        background-color: #FFFFFF;
+        padding-bottom: 0.5rem;
+    }
+</style>
+
+RushShop.vue 是 Home.vue 的子级
+界面显示，RushShop中的背景色是red，父级的比子级的优先级高，但是，添加了scoped，难道不是应该只对当前界面有效么？

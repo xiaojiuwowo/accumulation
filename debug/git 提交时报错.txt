@@ -1,0 +1,17 @@
+第一次建立本地仓库，commit的时候，报错：
+$ git push origin master
+To github.com:xiaojiuwowo/accumulation.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:xiaojiuwowo/accumulation.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+原因时因为在github上创建项目文件夹时，创建了readme.MD 而本地并没有这个文件，
+需要先把文件下载下来，再进行push操作。
+可以通过如下命令进行代码合并【注：pull=fetch+merge]
+git pull --rebase origin master
+
+运行完，本地仓库应该就有了readme.MD 这个文件，然后再次进行上面的操作。
